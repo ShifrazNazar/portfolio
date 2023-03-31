@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import React from "react";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
-import Link from "next/link";
-import { SocialIcon } from "react-social-icons";
 
 type Props = { projects: Project[] };
 
@@ -30,7 +28,7 @@ export default function Projects({ projects }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
-              className="h-20 md:h-28 xl:h-36 object-contain"
+              className="h-48 xl:h-52 object-contain rounded drop-shadow-xl"
               src={urlFor(project?.image).url()}
               alt=""
             />
@@ -43,6 +41,19 @@ export default function Projects({ projects }: Props) {
                 {project?.title}
               </h4>
               <div className="flex items-center space-x-2 justify-center ">
+                <a
+                  className="bg-darkGreen text-white rounded p-1"
+                  href={project?.getCode}
+                >
+                  CODE
+                </a>
+                <a
+                  className="bg-darkGreen text-white rounded p-1"
+                  href={project?.demo}
+                >
+                  DEMO
+                </a>
+                <div className="font-semibold">Tech Stack →</div>
                 {project?.technologies.map((technology) => (
                   <img
                     key={technology._id}
@@ -51,10 +62,8 @@ export default function Projects({ projects }: Props) {
                     alt=""
                   />
                 ))}
-                <SocialIcon
-            url={project.linkToBuild}
-          />
               </div>
+              <div className="text-center"></div>
 
               <p className="text-sm md:text-base lg:text-lg text-justify ">
                 {project?.summary}

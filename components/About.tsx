@@ -30,7 +30,7 @@ export default function About({ pageInfo }: Props) {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        className="-mb-32 md:mb-0 flex-shrink-0 w-44 rounded-full object-cover md:rounded-lg md:w-64 xl:w-72"
+        className="-mb-32 md:mb-0 flex-shrink-0 w-44 h-44 rounded-full object-cover md:rounded-lg md:w-64 md:h-fit xl:w-72"
         src={urlFor(pageInfo?.profilePic).url()}
       />
       <div className="mt-12 space-y-6 md:space-y-10 px-0 md:px-10">

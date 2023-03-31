@@ -96,14 +96,14 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       {/* Contact */}
       <section id="contact" className="snap-start">
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo} />
       </section>
 
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-end mr-5">
-            <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">
-              <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
+        <footer className="sticky bottom-10 md:bottom-2 w-full cursor-pointer">
+          <div className="flex justify-center">
+            <div className="h-9 w-9 bg-darkGreen/80 rounded-full flex items-center justify-center">
+              <HomeIcon className="h-7 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
             </div>
           </div>
         </footer>

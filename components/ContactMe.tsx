@@ -12,8 +12,7 @@ type Inputs = {
   message: string;
 };
 
-export default function ContactMe() {
-
+export default function ContactMe({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `shifraz:shifraz.shifraznazar@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}.${formData.message}`;
@@ -33,18 +32,18 @@ export default function ContactMe() {
         <div className="flex flex-col items-start ml-4 space-y-1 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">+94 705101754</p>
+            <p className="text-lg md:text-2xl lg:text-2xl">
+              {pageInfo?.phoneNumber}
+            </p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">
-              shifraznazar@gmail.com
-            </p>
+            <p className="text-lg md:text-2xl lg:text-2xl">{pageInfo?.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-darkGreen h-7 w-7 animate-pulse" />
             <p className="text-lg md:text-2xl lg:text-2xl">
-              KL, Malaysia
+              {pageInfo?.address}
             </p>
           </div>
         </div>

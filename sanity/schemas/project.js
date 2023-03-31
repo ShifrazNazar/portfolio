@@ -29,8 +29,13 @@ export default {
       of: [{type: 'reference', to: {type: 'skill'}}],
     },
     {
-      name: 'likeToBuild',
-      title: 'LikeToBuild',
+      name: 'getCode',
+      title: 'GetCode',
+      type: 'url',
+    },
+    {
+      name: 'demo',
+      title: 'Demo',
       type: 'url',
     },
   ],
