@@ -9,7 +9,7 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
         initial={{
           x: -500,
@@ -24,6 +24,7 @@ export default function Header({ socials }: Props) {
         transition={{
           duration: 1.5,
         }}
+        viewport={{ once: true }}
         className=" flex flex-row items-center"
       >
         {/* React social icons */}
@@ -53,14 +54,9 @@ export default function Header({ socials }: Props) {
         }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-          <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="grey"
-            bgColor="transparent"
-          />
+        
         <a href="#contact">
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <p className="uppercase md:inline-flex text-sm text-gray-400">
             Get in touch
           </p>
         </a>
